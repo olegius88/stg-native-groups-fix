@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <title>STG Native Tab Groups Fix</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header class="header">
+    <div class="header-title">
+      <img src="../icons/icon.svg" width="22" height="22" alt="icon">
+      <span>STG Native Groups Fix</span>
+    </div>
+    <label class="switch" title="Включить / выключить расширение">
+      <input type="checkbox" id="enabled">
+      <span class="slider"></span>
+    </label>
+  </header>
+
+  <div id="status-bar" class="status-bar">
+    <span class="status-dot" id="status-dot"></span>
+    <span id="status-text">Проверка статуса...</span>
+  </div>
+
+  <main class="content" id="main-content">
+    <section class="section">
+      <div class="section-label">Параметры синхронизации с Simple Tab Groups</div>
+
+      <label class="checkbox-row">
+        <input type="checkbox" id="restoreMetadata">
+        <div class="checkbox-text">
+          <div class="checkbox-title">Сохранять имя и цвет нативной группы</div>
+          <div class="checkbox-desc">Восстанавливает заголовок и цвет плашки при возврате в группу STG</div>
+        </div>
+      </label>
+
+      <label class="checkbox-row">
+        <input type="checkbox" id="restoreCollapsed">
+        <div class="checkbox-text">
+          <div class="checkbox-title">Сохранять свернутое состояние</div>
+          <div class="checkbox-desc">Если нативная группа была свернута до переключения STG, она останется свернутой</div>
+        </div>
+      </label>
+
+      <label class="checkbox-row">
+        <input type="checkbox" id="forceCollapseOnRestore">
+        <div class="checkbox-text">
+          <div class="checkbox-title">Всегда сворачивать при возврате</div>
+          <div class="checkbox-desc">Автоматически сворачивать нативные подгруппы при переключении в их группу STG</div>
+        </div>
+      </label>
+    </section>
+
+    <section class="section">
+      <div class="section-header-row">
+        <span class="section-label">Статистика текущего окна</span>
+        <button id="sync-btn" class="btn-secondary" type="button">Синхронизировать</button>
+      </div>
+      <div id="stats-box" class="checkbox-desc">Загрузка...</div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <button id="reset-btn" class="btn-secondary" type="button">Сбросить по умолчанию</button>
+    <span id="save-indicator" class="save-indicator">Применено</span>
+  </footer>
+
+  <script src="popup.js"></script>
+</body>
+</html>
